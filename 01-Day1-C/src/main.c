@@ -31,10 +31,7 @@ void solve_file(const char *file_path)
 	if (file == NULL)
 	{
 		printf("error opening file '%s' !\n", file_path);
-	}
-	else
-	{
-		printf("successfully opened '%s' !\n", file_path);
+		return;
 	}
 
 	printf("Part 1: There are %i measurements larger than the previous one. \n", part_1(file));
@@ -127,7 +124,7 @@ int part_2(FILE *file)
 int compare(data_frame_T *prev, data_frame_T *curr, int counter)
 {
 	curr->sum = curr->val1 + curr->val2 + curr->val3;
-	
+
 	if (counter < 3)
 	{
 		return 0;
