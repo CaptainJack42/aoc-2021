@@ -42,7 +42,6 @@ def part2(lines: list[Line], field_size: int) -> int:
     for line in lines:
         field = draw_line(field, line)
 
-    # print(field)
     return count_overlaps(field)
 
 
