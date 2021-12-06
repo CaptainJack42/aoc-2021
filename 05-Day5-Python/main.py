@@ -42,28 +42,27 @@ def part2(lines: list[Line], field_size: int) -> int:
     for line in lines:
         field = draw_line(field, line)
 
-    print(field)
+    # print(field)
     return count_overlaps(field)
 
 
 def draw_line(field: ndarray, line: Line) -> ndarray:
     x1, y1, x2, y2 = line.x1, line.y1, line.x2, line.y2
-    if x1 > x2:
-        x1, x2 = x2, x1
 
-    if y1 > y2:
-        y1, y2 = y2, y1
-
-    if x1 == x2 or y1 == y2:
-        for i in range(x1, x2 + 1):
-            for j in range(y1, y2 + 1):
+    if x1 == x2 or y1 == y2:  # Horizontal or vertical line
+        for i in range(min(x1, x2), max(x1, x2) + 1):
+            for j in range(min(y1, y2), max(y1, y2) + 1):
                 field[j][i] += 1
-    else:
-        # FIXME: doesn't work smh
-        i = 0
-        while i <= x2 - x1 and i <= y2 - y1:
-            field[y1 + i][x1 + i] += 1
-            i += 1
+    # Diagonal line from top-left -> bottom-right
+    elif (y1 < y2 and x1 < x2) or (y1 > y2 and x1 > x2):
+        line_len = max(x1, x2) - min(x1, x2) + 1
+        for i in range(line_len):
+            field[min(y1, y2) + i][min(x1, x2) + i] += 1
+    # Diagonal line from bottom-left -> top-right
+    elif (y1 > y2 and x1 < x2) or (y1 < y2 and x1 > x2):
+        line_len = max(x1, x2) - min(x1, x2) + 1
+        for i in range(line_len):
+            field[min(y1, y2) + i][max(x1, x2) - i] += 1
 
     return field
 
@@ -81,5 +80,5 @@ def count_overlaps(field: ndarray) -> int:
 if __name__ == '__main__':
     print('Sample:')
     main('sample.txt')
-    # print('Input:')
-    # main('input.txt')
+    print('Input:')
+    main('input.txt')
