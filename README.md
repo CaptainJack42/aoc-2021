@@ -6,3 +6,8 @@ My Solutions to Advent of Code 2021 ( <https://adventofcode.com/> ). I don't kno
 
 - Day 1: C
 - Day 2: C
+- Day 3: C
+- Day 4: Python
+- Day 5: Python
+- Day 6: Python
+- Day 7: Rust
