@@ -1,6 +1,3 @@
-from typing import List
-
-
 def main(filename: str):
     with open(filename, 'r') as file:
         lines = file.readlines()
@@ -23,8 +20,7 @@ def part1(input: list[str]) -> int:
 
 def part2(input: list[str]) -> int:
     answer = 0
-    signal_list: List[SignalMapping] = [None for i in range(len(input))]
-    for idx, line in enumerate(input):
+    for line in input:
         tmp = line.split('|')
         signals, digits = tmp[0], tmp[1]
         curr_signal = SignalMapping(signals.split())
