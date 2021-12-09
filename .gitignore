@@ -1,6 +1,9 @@
 # vscode
 *.vscode/
 
+# Rust
+*target/
+
 # Prerequisites
 *.d
 
