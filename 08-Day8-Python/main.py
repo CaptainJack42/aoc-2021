@@ -137,12 +137,12 @@ class SignalMapping:
             self.numbers['one'].append(char)
 
     def parse_2(self, sig: str):
-        # since only 2 and 3 are left we can stop identifying stuff and use the numbers dict later to identify numbers
+        # since only 2, 3 and/or 5 are left we can stop identifying stuff and use the numbers dict later to identify numbers
         for char in sig:
             self.numbers['two'].append(char)
 
     def parse_3(self, sig: str):
-        # since only 3 is left we can stop identifying stuff and use the numbers dict later to identify numbers
+        # since only 2, 3 and/or 5 are left we can stop identifying stuff and use the numbers dict later to identify numbers
         for char in sig:
             self.numbers['three'].append(char)
 
@@ -154,7 +154,7 @@ class SignalMapping:
             self.numbers['four'].append(char)
 
     def parse_5(self, sig: str):
-        # since only 2, 3 and 5 are left we can stop identifying stuff and use the numbers dict later to identify numbers
+        # since only 2, 3 and/or 5 are left we can stop identifying stuff and use the numbers dict later to identify numbers
         for char in sig:
             self.numbers['five'].append(char)
 
