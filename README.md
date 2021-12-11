@@ -14,3 +14,4 @@ My Solutions to Advent of Code 2021 ( <https://adventofcode.com/> ). I don't kno
 - Day 8: Python
 - Day 9: Rust
 - Day 10: Rust
+- Day 11: Rust
