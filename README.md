@@ -15,3 +15,5 @@ My Solutions to Advent of Code 2021 ( <https://adventofcode.com/> ). I don't kno
 - Day 9: Rust
 - Day 10: Rust
 - Day 11: Rust
+
+### Decided to learn Rust, so everything else will most likely be Rust as well  
